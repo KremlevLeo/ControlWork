@@ -1,2 +1,13 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿/*Написать программу, которая из имеющегося массива строк формирует массив из строк, длина которых меньше либо равна 3 симвла. Первоначальный массив можно ввести с клавиатуры, либо задать на старте выполнения алгоритма. При решении не рекомендуется пользоваться коллекциям, лучше обойтсь исключительно массивами.
+Примеры:
+["hello","2","world",";-)"]->["2",";-)"] */
+
+string str = Console.ReadLine();
+char [] ar = str.ToCharArray();
+PrintArr(ar);
+
+void PrintArr(char[] arr){
+for(int i = 0; i < arr.Length;i++){
+    Console.Write(arr[i]+" ");
+}
+}
