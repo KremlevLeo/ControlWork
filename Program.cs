@@ -3,18 +3,21 @@
 ["hello","2","world",";-)"]->["2",";-)"] */
 
 string str = Console.ReadLine();
-string[] arr = new string[] { str };
-string[] res = new string[arr.Length];
-FillArr(res);
+string[] words = str.Split(new char[] { ' ' });
+string[] res = new string[words.Length];
+res = FillArr(words);
+Console.Write("[");
+PrintArr(words);
+Console.Write("] -> [");
 PrintArr(res);
+Console.WriteLine("]");
 
 string[] FillArr(string[] arr)
 {
     string[] resArr = new string[arr.Length];
     for (int i = 0; i < arr.Length; i++)
     {
-        int res = arr[i].Length;
-        if (res <= 3)
+        if (arr[i].Length <= 3)
         {
             resArr[i] = arr[i];
         }
@@ -25,6 +28,6 @@ void PrintArr(string[] arr)
 {
     for (int i = 0; i < arr.Length; i++)
     {
-        Console.Write(arr[i]);
+        Console.Write($"'{arr[i]}',");
     }
 }
