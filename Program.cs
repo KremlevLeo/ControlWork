@@ -3,11 +3,28 @@
 ["hello","2","world",";-)"]->["2",";-)"] */
 
 string str = Console.ReadLine();
-char [] ar = str.ToCharArray();
-PrintArr(ar);
+string[] arr = new string[] { str };
+string[] res = new string[arr.Length];
+FillArr(res);
+PrintArr(res);
 
-void PrintArr(char[] arr){
-for(int i = 0; i < arr.Length;i++){
-    Console.Write(arr[i]+" ");
+string[] FillArr(string[] arr)
+{
+    string[] resArr = new string[arr.Length];
+    for (int i = 0; i < arr.Length; i++)
+    {
+        int res = arr[i].Length;
+        if (res <= 3)
+        {
+            resArr[i] = arr[i];
+        }
+    }
+    return resArr;
 }
+void PrintArr(string[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+    {
+        Console.Write(arr[i]);
+    }
 }
