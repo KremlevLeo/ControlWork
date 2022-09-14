@@ -6,28 +6,31 @@ string str = Console.ReadLine();
 string[] words = str.Split(new char[] { ' ' });
 string[] res = new string[words.Length];
 res = FillArr(words);
-Console.Write("[");
+Console.Write("[ ");
 PrintArr(words);
-Console.Write("] -> [");
+Console.Write("] -> [ ");
 PrintArr(res);
 Console.WriteLine("]");
 
 string[] FillArr(string[] arr)
 {
+    int tmp = 0;
     string[] resArr = new string[arr.Length];
     for (int i = 0; i < arr.Length; i++)
     {
         if (arr[i].Length <= 3)
         {
-            resArr[i] = arr[i];
+            resArr[tmp] = arr[i];
+            tmp++;
         }
     }
+    Array.Resize(ref resArr, tmp);
     return resArr;
 }
 void PrintArr(string[] arr)
 {
     for (int i = 0; i < arr.Length; i++)
     {
-        Console.Write($"'{arr[i]}',");
+        Console.Write($"'{arr[i]}' ");
     }
 }
